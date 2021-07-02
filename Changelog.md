@@ -1,6 +1,7 @@
 # Spectrometer Changelog
 
-## Unreleased 
+## v2.11.0
+- Analysis target configuration ([#273](https://github.com/fossas/spectrometer/pull/273))
 
 - Support ReleaseGroup configuration ([#283](https://github.com/fossas/spectrometer/pull/283))
 - Support HTTP endpoints for archive uploads ([#276](https://github.com/fossas/spectrometer/pull/276))
