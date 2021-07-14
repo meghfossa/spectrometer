@@ -1,13 +1,13 @@
 # Spectrometer Changelog
 
 ## v2.11.0
-- Analysis target configuration ([#273](https://github.com/fossas/spectrometer/pull/273))
 
-- Support ReleaseGroup configuration ([#283](https://github.com/fossas/spectrometer/pull/283))
-- Support HTTP endpoints for archive uploads ([#276](https://github.com/fossas/spectrometer/pull/276))
+- Analysis target configuration ([#273](https://github.com/fossas/spectrometer/pull/273))
 
 ## v2.10.3
 
+- Support ReleaseGroup configuration ([#283](https://github.com/fossas/spectrometer/pull/283))
+- Support HTTP endpoints for archive uploads ([#276](https://github.com/fossas/spectrometer/pull/276))
 - Deprecate `fossa vps` subcommands.
 - Add `--experimental-enable-monorepo` and other associated flags to `fossa analyze`, which enables experimental monorepo support.
   Monorepo flags are only used with support from FOSSA engineering, and are experimental while we build robust support for monorepo projects with FOSSA partners.
