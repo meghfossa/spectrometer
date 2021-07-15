@@ -95,6 +95,7 @@ common deps
     , optparse-applicative         >=0.15     && <0.17
     , path                         ^>=0.8
     , path-io                      ^>=1.6.0
+    , parser-combinators           ^>=1.3
     , prettyprinter                >=1.6      && <1.8
     , prettyprinter-ansi-terminal  ^>=1.1.1
     , req                          ^>=3.7
@@ -222,6 +223,7 @@ library
     Strategy.Conda
     Strategy.Conda.CondaList
     Strategy.Conda.EnvironmentYml
+    Strategy.Elixir.MixTree
     Strategy.Erlang.ConfigParser
     Strategy.Erlang.Rebar3Tree
     Strategy.Glide
@@ -246,6 +248,7 @@ library
     Strategy.Maven.Pom.Closure
     Strategy.Maven.Pom.PomFile
     Strategy.Maven.Pom.Resolver
+    Strategy.Mix
     Strategy.Node.NpmList
     Strategy.Node.NpmLock
     Strategy.Node.PackageJson
@@ -317,6 +320,7 @@ test-suite unit-tests
     Control.Carrier.DiagnosticsSpec
     Discovery.FiltersSpec
     Effect.ExecSpec
+    Elixir.MixTreeSpec
     Erlang.ConfigParserSpec
     Erlang.Rebar3TreeSpec
     Extra.TextSpec
