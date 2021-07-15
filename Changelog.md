@@ -3,7 +3,7 @@
 ## Unreleased 
 
 - Support HTTP endpoints for archive uploads ([#276](https://github.com/fossas/spectrometer/pull/276))
-
+- Supports elixir projects when mix is accessible ([#287](https://github.com/fossas/spectrometer/pull/287))
 ## v2.10.2
 
 - Fixes an issue where some `fossa` commands (including `fossa test`) would exit non-zero on success ([#278](https://github.com/fossas/spectrometer/pull/278)).
