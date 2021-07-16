@@ -38,7 +38,8 @@ import App.Fossa.VPS.Test qualified as VPSTest
 import App.Fossa.VPS.Types (FilterExpressions (..), NinjaFilePaths (..), NinjaScanID (..))
 import App.OptionExtensions (jsonOption, uriOption)
 import App.Types (
-  BaseDir (unBaseDir),
+  BaseDir (BaseDir, unBaseDir),
+  MonorepoAnalysisOpts (MonorepoAnalysisOpts),
   NinjaGraphCLIOptions (NinjaGraphCLIOptions),
   OverrideProject (
     OverrideProject,
@@ -46,7 +47,7 @@ import App.Types (
     overrideName,
     overrideRevision
   ),
-  ProjectMetadata (ProjectMetadata),
+  ProjectMetadata (..),
  )
 import App.Util (validateDir, validateFile)
 import App.Version (fullVersionDescription)
@@ -102,7 +103,7 @@ import Options.Applicative (
   value,
   (<**>),
  )
-import Path (Abs, Dir, File, Path, Rel, parseRelDir)
+import Path (Abs, Dir, File, Path, Rel, parseAbsDir, parseRelDir)
 import System.Environment (lookupEnv)
 import System.Exit (die)
 import System.Info qualified as SysInfo
@@ -201,9 +202,9 @@ appMain = do
           let apiOpts = ApiOpts optBaseUrl key
           let metadata = maybe analyzeMetadata (mergeFileCmdMetadata analyzeMetadata) fileConfig
           case (projectReleaseGroupName metadata, projectReleaseGroupRelease metadata) of
-                  (Just _, Just _) -> pure ()
-                  (Nothing, Nothing) -> pure ()
-                  _ -> die "releaseGroup.release and releaseGroup.name must both be specified if you want to associate this project to a release group."
+            (Just _, Just _) -> pure ()
+            (Nothing, Nothing) -> pure ()
+            _ -> die "releaseGroup.release and releaseGroup.name must both be specified if you want to associate this project to a release group."
 
           doAnalyze (UploadScan apiOpts metadata)
 
