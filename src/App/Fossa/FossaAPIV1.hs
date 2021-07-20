@@ -198,8 +198,8 @@ mkMetadataOpts ProjectMetadata{..} projectName = mconcat $ catMaybes maybes
       , ("link" =:) <$> projectLink
       , ("team" =:) <$> projectTeam
       , ("policy" =:) <$> projectPolicy
-      , ("releaseGroup" =:) <$> projectReleaseGroupName
-      , ("releaseGroupRelease" =:) <$> projectReleaseGroupRelease
+      , ("releaseGroup" =:) . releaseGroupName <$> projectReleaseGroup
+      , ("releaseGroupRelease" =:) . releaseGroupRelease <$> projectReleaseGroup
       , ("title" =:) <$> title
       ]
 
