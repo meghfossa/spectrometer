@@ -10,6 +10,7 @@ import Control.Carrier.Diagnostics qualified as Diag
 import Effect.ReadFS
 import Path
 import Test.Hspec qualified as T
+import App.Types (ReleaseGroupMetadata(..))
 
 expectedConfigFile :: ConfigFile
 expectedConfigFile =
@@ -41,11 +42,11 @@ expectedConfigRevision =
     , configBranch = Just "master"
     }
 
-expectedReleaseGroup :: ConfigReleaseGroup
+expectedReleaseGroup :: ReleaseGroupMetadata
 expectedReleaseGroup =
-  ConfigReleaseGroup
-    { configReleaseGroupName = Just "test-release"
-    , configReleaseGroupRelease = Just "123"
+  ReleaseGroupMetadata
+    { releaseGroupName = "test-release"
+    , releaseGroupRelease = "123"
     }
 
 testFile :: Path Rel File
