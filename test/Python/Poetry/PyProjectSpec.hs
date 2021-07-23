@@ -5,7 +5,6 @@ module Python.Poetry.PyProjectSpec (
 import Data.Map qualified as Map
 import Data.Text.IO qualified as TIO
 
--- import Strategy.Python.Poetry.Common (buildPyProjectGraph)
 import Strategy.Python.Poetry.PyProject (
   PoetryDependency (..),
   PyProject (..),
@@ -27,7 +26,6 @@ import Test.Hspec (
   shouldBe,
  )
 import Toml qualified
-
 import Data.Text (Text)
 import Data.Void (Void)
 import DepTypes (
